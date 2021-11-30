@@ -6,6 +6,7 @@ use Faker\Provider\Base;
 
 class Region extends Base
 {
+    /** @var string[] */
     protected static array $northAmerica = [
         'Canada'              => 'ca-central-1',
         'North Virginia'      => 'us-east-1',
@@ -14,18 +15,22 @@ class Region extends Base
         'Oregon'              => 'us-west-2',
     ];
 
+    /** @var string[] */
     protected static array $southAmerica = [
         'São Paulo' => 'sa-east-1',
     ];
 
+    /** @var string[] */
     protected static array $middleEast = [
         'Bahrain' => 'me-south-1',
     ];
 
+    /** @var string[] */
     protected static array $africa = [
         'Cape Town' => 'af-south-1',
     ];
 
+    /** @var string[] */
     protected static array $europe = [
         'Frankfurt' => 'eu-central-1',
         'Stockholm' => 'eu-north-1',
@@ -35,6 +40,7 @@ class Region extends Base
         'Paris'     => 'eu-west-3',
     ];
 
+    /** @var string[] */
     protected static array $asiaPacific = [
         'Hong Kong' => 'ap-east-1',
         'Tokyo'     => 'ap-northeast-1',
