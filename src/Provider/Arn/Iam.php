@@ -48,4 +48,17 @@ class Iam extends Arn
 
         return $this->formatArn("group/{$prefix}{$group}");
     }
+
+    /**
+     * Generate a random AWS IAM role ARN
+     *
+     * Example: 'arn:aws:iam::391393893958:role/flarson'
+     *
+     * @return string
+     */
+    public function awsArnIamRole(): string
+    {
+        $role = $this->generator->word();
+        return $this->formatArn("role/$role");
+    }
 }

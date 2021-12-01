@@ -28,6 +28,7 @@ class ArnTest extends TestCase
             'iam-user-prefixed' => [Iam::class, 'awsArnIamUser', [true], '/^arn:aws:iam::\d{12}:user\/\w+\/[a-z0-9._-]+$/'],
             'iam-group' => [Iam::class, 'awsArnIamGroup', [], '/^arn:aws:iam::\d{12}:group\/[a-z0-9._-]+$/'],
             'iam-group-prefixed' => [Iam::class, 'awsArnIamGroup', [true], '/^arn:aws:iam::\d{12}:group\/\w+\/[a-z0-9._-]+$/'],
+            'iam-role' => [Iam::class, 'awsArnIamRole', [], '/^arn:aws:iam::\d{12}:role\/[a-z0-9._-]+$/'],
         ];
     }
 }
