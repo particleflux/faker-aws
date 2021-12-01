@@ -2,6 +2,11 @@
 
 namespace particleflux\FakerAWS\Provider\Arn;
 
+/**
+ * IAM related ARNs
+ *
+ * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html
+ */
 class Iam extends Arn
 {
     protected const SERVICE = 'iam';
@@ -23,5 +28,24 @@ class Iam extends Arn
         }
 
         return $this->formatArn("user/{$prefix}{$user}");
+    }
+
+    /**
+     * Generate a random AWS IAM group ARN
+     *
+     * Example: 'arn:aws:iam::391393893958:group/flarson'
+     *
+     * @param bool $withPrefix Whether to include a path-prefix
+     * @return string
+     */
+    public function awsArnIamGroup(bool $withPrefix = false): string
+    {
+        $group = $this->generator->userName();
+        $prefix = '';
+        if ($withPrefix) {
+            $prefix = $this->generator->word() . '/';
+        }
+
+        return $this->formatArn("group/{$prefix}{$group}");
     }
 }
