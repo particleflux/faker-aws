@@ -27,7 +27,7 @@ class Iam extends Arn
             $prefix = $this->generator->word() . '/';
         }
 
-        return $this->formatArn("user/{$prefix}{$user}");
+        return $this->formatArn('', "user/{$prefix}{$user}");
     }
 
     /**
@@ -46,7 +46,7 @@ class Iam extends Arn
             $prefix = $this->generator->word() . '/';
         }
 
-        return $this->formatArn("group/{$prefix}{$group}");
+        return $this->formatArn('', "group/{$prefix}{$group}");
     }
 
     /**
@@ -59,6 +59,6 @@ class Iam extends Arn
     public function awsArnIamRole(): string
     {
         $role = $this->generator->word();
-        return $this->formatArn("role/$role");
+        return $this->formatArn('', "role/$role");
     }
 }
