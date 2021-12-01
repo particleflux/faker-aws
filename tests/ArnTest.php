@@ -4,6 +4,7 @@ namespace particleflux\FakerAWS\tests;
 
 use Faker\Factory;
 use particleflux\FakerAWS\Provider\Arn\Iam;
+use particleflux\FakerAWS\Provider\Arn\Sqs;
 use PHPUnit\Framework\TestCase;
 
 class ArnTest extends TestCase
@@ -29,6 +30,8 @@ class ArnTest extends TestCase
             'iam-group' => [Iam::class, 'awsArnIamGroup', [], '/^arn:aws:iam::\d{12}:group\/[a-z0-9._-]+$/'],
             'iam-group-prefixed' => [Iam::class, 'awsArnIamGroup', [true], '/^arn:aws:iam::\d{12}:group\/\w+\/[a-z0-9._-]+$/'],
             'iam-role' => [Iam::class, 'awsArnIamRole', [], '/^arn:aws:iam::\d{12}:role\/[a-z0-9._-]+$/'],
+
+            'sqs-queue' => [Sqs::class, 'awsArnSqsQueue', [], '/^arn:aws:sqs:[a-z]{2}-\w+-\d+:\d{12}:[a-z0-9._-]+$/'],
         ];
     }
 }
