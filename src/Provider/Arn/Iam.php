@@ -2,8 +2,6 @@
 
 namespace particleflux\FakerAWS\Provider\Arn;
 
-use Faker\Provider\Base;
-
 class Iam extends Arn
 {
     protected const SERVICE = 'iam';

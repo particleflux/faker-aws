@@ -3,6 +3,7 @@
 namespace particleflux\FakerAWS\Provider\Arn;
 
 use Faker\Provider\Base;
+use particleflux\FakerAWS\Provider\Account;
 
 abstract class Arn extends Base
 {
@@ -11,7 +12,9 @@ abstract class Arn extends Base
 
     protected function formatArn(string $path): string
     {
-        $account = self::numerify('############');
+        $accountProvider = new Account($this->generator);
+
+        $account = $accountProvider->awsAccountId();
         return sprintf(static::ARN_FORMAT, static::SERVICE, $account, $path);
     }
 }
